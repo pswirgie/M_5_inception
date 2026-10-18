@@ -31,3 +31,5 @@
 What is a docker :
 - [introduction-to-docker](https://www.geeksforgeeks.org/devops/introduction-to-docker/)
 - [what-is-docker-image](https://www.geeksforgeeks.org/devops/what-is-docker-image/)
+- [nginx-config-with-ssl]https://nginx.org/en/docs/http/configuring_https_servers.html
+- ISO image https://www.debian.org/distrib/
