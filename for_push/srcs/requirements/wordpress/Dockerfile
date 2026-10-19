@@ -4,6 +4,7 @@ RUN apt update -y && apt upgrade -y && apt install -y curl php-fpm php-mysqli
 
 
 RUN curl -o /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
+    && chmod +x wp-cli.phar \
     && mv wp-cli.phar /usr/local/bin/wp
 
 
