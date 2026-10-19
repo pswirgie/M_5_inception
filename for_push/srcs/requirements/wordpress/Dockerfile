@@ -10,7 +10,7 @@ RUN curl -o /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh
 	&& chmod +x /usr/local/bin/wp
 
 COPY ./tools/script.sh /usr/local/bin/script.sh
-RUN chmod +x script.sh \
+RUN chmod +x /usr/local/bin/script.sh \
 	&& mkdir -p /run/php /var/www/html
 COPY ./conf/www.conf /etc/php/8.2/fpm/pool.d/www.conf
 
