@@ -6,7 +6,6 @@ COPY ./50-server.cnf /etc/mysql/mariadb.conf.d/
 COPY ./init.sql.template .
 COPY ./entrypoint.sh .
 RUN chmod +x ./entrypoint.sh
-RUN chown -R mysql:mysql /run/mysqld
 
 EXPOSE 3306
 

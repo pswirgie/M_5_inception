@@ -10,7 +10,7 @@ volumes:
     name: wordpress
     driver: local
     driver_opts:
-      device: /home/pswirgie/data/mariadb
+      device: /home/pswirgie/data/wordpress
       o: bind
       type: none
 
@@ -41,7 +41,7 @@ services:
     env_file:
       - .env
     expose:
-    - "9000"
+    - "9000:9000"
     restart: on-failure
   mariadb:
     container_name: mariadb
@@ -53,7 +53,7 @@ services:
     env_file:
       - .env
     expose:
-      - "3306"
+      - "3306:3306"
     restart: on-failure
 
 networks:

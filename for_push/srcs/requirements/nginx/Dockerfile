@@ -9,7 +9,7 @@ RUN mkdir -p /etc/nginx/ssl \
         -out /etc/nginx/ssl/certificate.crt \
         -subj "/C=FR/ST=IDF/L=Paris/O=42/OU=42/CN=${DOMAIN_NAME}"
 
-COPY ./50-server.cnf /etc/mysql/mariadb.conf.d/
+COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 443
 
