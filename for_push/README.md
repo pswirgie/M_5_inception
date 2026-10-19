@@ -29,7 +29,9 @@
 ### Ressources
 
 What is a docker :
-- [introduction-to-docker](https://www.geeksforgeeks.org/devops/introduction-to-docker/)
-- [what-is-docker-image](https://www.geeksforgeeks.org/devops/what-is-docker-image/)
-- [nginx-config-with-ssl]https://nginx.org/en/docs/http/configuring_https_servers.html
-- ISO image https://www.debian.org/distrib/
+- [introduction to docker](https://www.geeksforgeeks.org/devops/introduction-to-docker/)
+- [what is docker image](https://www.geeksforgeeks.org/devops/what-is-docker-image/)
+- [nginx config with ssl 01](https://nginx.org/en/docs/http/configuring_https_servers.html)
+- [nginx config with ssl 02](https://www.ssldragon.com/fr/how-to/install-ssl-certificate/nginx)
+- [ISO image](https://www.debian.org/distrib/)
+- 

@@ -1,4 +1,4 @@
-FROM debian:13
+FROM debian:bookworm
 
 RUN apt update -y && apt upgrade -y && apt install -y mariadb-server mariadb-client gettext-base
 
