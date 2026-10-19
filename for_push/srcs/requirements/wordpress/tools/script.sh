@@ -24,9 +24,5 @@ if [ ! -f wp-config.php ]; then
 		--user_pass="$WP_PASS2" \
 		--allow-root
 fi
+
 exec "$@"
-
-// php-fpm pas nginx
-deux utilisateurs un admin et un autre
-un volume pour les fichiers
-
