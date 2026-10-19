@@ -1,13 +1,32 @@
-curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-chmod +x wp-cli.phar
+#!/bin/sh
+
+chmod +x /usr/local/bin/wp
+
+until mysqladmin ping -h mariadb -u"$DB_USER" -p"$DB_PASSWORD" --silent; do
+	echo "En attente de MariaDB..."
+	sleep 2
+done
 
 if [ ! -f wp-config.php ]; then
-	wp config create --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASSWORD --dbhost=mariadb --skip-check --allow-root
-
+	wp core download --allow-root
+	wp config create \
+		--allow-root \
+		--dbname=$DB_NAME --dbuser=$DB_USER \
+		--dbpass=$DB_PASSWORD --dbhost=mariadb \
+		--skip-check
+	wp core install \
+		--allow-root --url=https://$DOMAIN_NAME \
+		--title=inception --admin_user=$ADMIN_USER \
+		--admin_password=$ADMIN_PASSWORD --admin_email=$ADMIN_MAIL \
+		--skip-email
+	wp user create "$WP_USER2" "$WP_MAIL2" \
+		--role=author \
+		--user_pass="$WP_PASS2" \
+		--allow-root
+fi
+exec "$@"
 
 // php-fpm pas nginx
-wordpress configure
-une base de donnee avec mariadb
 deux utilisateurs un admin et un autre
 un volume pour les fichiers
 

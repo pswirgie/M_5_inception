@@ -36,3 +36,5 @@ What is a docker :
 - [ISO image](https://www.debian.org/distrib/)
 - [Install cli for wordpress](https://make.wordpress.org/cli/handbook/guides/installing/)
 - dockers (mariadb, nginx) + docker-compose Matcha (project 42 began with scraeryme)
+- [wordpress preconfig](https://developer.wordpress.org/cli/commands/core/)
+- [wordpress commands](https://developer.wordpress.org/cli/commands/)
