@@ -12,6 +12,7 @@ install git: `sudo apt install git-all`
 install docker: `sudo apt update -y && sudo apt upgrade -y`
 install docker-compose: `sudo apt install docker-compose`
 
+avoir les droits: `su -`
 
 ressources 
 [wordpress docker](https://www.hostinger.com/fr/tutoriels/docker-wordpress/)

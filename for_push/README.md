@@ -34,4 +34,5 @@ What is a docker :
 - [nginx config with ssl 01](https://nginx.org/en/docs/http/configuring_https_servers.html)
 - [nginx config with ssl 02](https://www.ssldragon.com/fr/how-to/install-ssl-certificate/nginx)
 - [ISO image](https://www.debian.org/distrib/)
-- 
+- [Install cli for wordpress](https://make.wordpress.org/cli/handbook/guides/installing/)
+- dockers (mariadb, nginx) + docker-compose Matcha (project 42 began with scraeryme)
