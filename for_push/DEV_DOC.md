@@ -11,6 +11,7 @@ Command-line interface (CLI): Access to a terminal or command prompt.
 install git: `sudo apt install git-all`
 install docker: `sudo apt update -y && sudo apt upgrade -y`
 install docker-compose: `sudo apt install docker-compose`
+install make: `sudo apt update && sudo apt install make`
 
 avoir les droits: `su -`
 
