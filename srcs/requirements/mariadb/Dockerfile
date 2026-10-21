@@ -14,7 +14,6 @@ RUN chmod +x ./entrypoint.sh
 
 EXPOSE 3306
 
-LABEL version="11.8"
 LABEL description="MariaDB_Server"
 
 ENTRYPOINT [ "./entrypoint.sh" ]

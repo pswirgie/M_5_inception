@@ -9,6 +9,7 @@ done
 
 if [ ! -f wp-config.php ]; then
 	wp core download --allow-root
+	chown -R www-data:www-data /var/www/html
 	wp config create \
 		--allow-root \
 		--dbname=$DB_NAME --dbuser=$DB_USER \
