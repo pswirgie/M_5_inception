@@ -1,4 +1,5 @@
 all:
+	@mkdir -p /home/pswirgie/data/mariadb /home/pswirgie/data/wordpress
 	@docker compose -f docker-compose.yml up -d --build
 
 up:
@@ -22,6 +23,8 @@ logs-wordpress:
 	docker compose logs wordpress
 
 clean:
+	@rm -rf /home/pswirgie/data/mariadb 
+	@rm -rf /home/pswirgie/data/wordpress
 	@docker compose -f docker-compose.yml down -v --remove-orphans
 
 fclean: clean
