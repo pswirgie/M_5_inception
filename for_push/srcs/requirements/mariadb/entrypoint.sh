@@ -3,7 +3,7 @@
 set -eu
 
 if [ -f init.sql.template ]; then
-	envsubst < init.sql.template > /etc/mysql/init.sql
+	envsubst < /docker-entrypoint-initdb.b/init.sql.template > /etc/mysql/init.sql
 	rm -f init.sql.template
 fi
 
