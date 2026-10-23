@@ -1,12 +1,12 @@
 all:
 	@mkdir -p /home/pswirgie/data/mariadb /home/pswirgie/data/wordpress
-	@docker compose -f docker-compose.yml up -d --build
+	@docker compose -f srcs/docker-compose.yml up -d --build
 
 up:
-	@docker compose -f docker-compose.yml up -d
+	@docker compose -f srcs/docker-compose.yml up -d
 
 down:
-	@docker compose -f docker-compose.yml down
+	@docker compose -f srcs/docker-compose.yml down
 
 restart: down up
 
@@ -23,9 +23,8 @@ logs-wordpress:
 	docker compose logs wordpress
 
 clean:
-	@docker compose -f docker-compose.yml down -v --remove-orphans
-	@rm -rf /home/pswirgie/data/mariadb
-	@rm -rf /home/pswirgie/data/wordpress
+	@docker compose -f srcs/docker-compose.yml down -v --remove-orphans
+	@sudo rm -rf /home/pswirgie/data/mariadb /home/pswirgie/data/wordpress
 
 fclean: clean
 	@docker system prune -af --volumes
