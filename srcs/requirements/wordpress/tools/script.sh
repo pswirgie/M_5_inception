@@ -2,6 +2,10 @@
 
 chmod +x /usr/local/bin/wp
 
+DB_PASSWORD=$(cat /run/secrets/db_password)
+ADMIN_PASSWORD=$(cat /run/secrets/wp_admin_password)
+WP_PASS2=$(cat /run/secrets/wp_user_password)
+
 until mysqladmin ping -h mariadb -u"$DB_USER" -p"$DB_PASSWORD" --silent; do
 	echo "En attente de MariaDB..."
 	sleep 2

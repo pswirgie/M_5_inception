@@ -1,29 +1,31 @@
+COMPOSE = docker compose -f srcs/docker-compose.yml
+
 all:
 	@mkdir -p /home/pswirgie/data/mariadb /home/pswirgie/data/wordpress
-	@docker compose -f srcs/docker-compose.yml up -d --build
+	@$(COMPOSE) up -d --build
 
 up:
-	@docker compose -f srcs/docker-compose.yml up -d
+	@$(COMPOSE) up -d
 
 down:
-	@docker compose -f srcs/docker-compose.yml down
+	@$(COMPOSE) down
 
 restart: down up
 
 logs:
-	docker compose logs
+	@$(COMPOSE) logs 
 
 logs-mariadb:
-	docker compose logs mariadb
+	@$(COMPOSE) logs mariadb
 
 logs-nginx:
-	docker compose logs nginx
+	@$(COMPOSE) logs nginx
 
 logs-wordpress:
-	docker compose logs wordpress
+	@$(COMPOSE) logs wordpress
 
 clean:
-	@docker compose -f srcs/docker-compose.yml down -v --remove-orphans
+	@$(COMPOSE) down -v --remove-orphans
 	@sudo rm -rf /home/pswirgie/data/mariadb /home/pswirgie/data/wordpress
 
 fclean: clean
@@ -33,4 +35,4 @@ re: fclean all
 
 reclean: clean all
 
-.PHONY: all up down restart logs* clean fclean re reclean
+.PHONY: all up down restart logs logs-mariadb logs-nginx logs-wordpress clean fclean re reclean
