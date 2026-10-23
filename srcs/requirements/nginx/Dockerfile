@@ -1,8 +1,6 @@
 FROM debian:bookworm
 
-RUN apt update -y && apt upgrade -y && apt install -y nginx openssl && apt install curl -y 
-
-RUN mkdir -p /etc/nginx/ssl
+RUN apt update -y && apt upgrade -y && apt install -y nginx openssl
 RUN mkdir -p /etc/nginx/ssl \
     && openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
         -keyout /etc/nginx/ssl/certificate.key \

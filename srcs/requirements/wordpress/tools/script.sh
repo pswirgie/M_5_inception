@@ -9,17 +9,17 @@ done
 
 if [ ! -f wp-config.php ]; then
 	wp core download --allow-root
-	chown -R www-data:www-data /var/www/html
 	wp config create \
 		--allow-root \
-		--dbname=$DB_NAME --dbuser=$DB_USER \
-		--dbpass=$DB_PASSWORD --dbhost=mariadb \
+		--dbname="$DB_NAME" --dbuser="$DB_USER" \
+		--dbpass="$DB_PASSWORD" --dbhost=mariadb \
 		--skip-check
 	wp core install \
-		--allow-root --url=https://$DOMAIN_NAME \
-		--title=inception --admin_user=$ADMIN_USER \
-		--admin_password=$ADMIN_PASSWORD --admin_email=$ADMIN_MAIL \
+		--allow-root --url=https://"$DOMAIN_NAME" \
+		--title=inception --admin_user="$ADMIN_USER" \
+		--admin_password="$ADMIN_PASSWORD" --admin_email="$ADMIN_MAIL" \
 		--skip-email
+	chown -R www-data:www-data /var/www/html
 	wp user create "$WP_USER2" "$WP_MAIL2" \
 		--role=author \
 		--user_pass="$WP_PASS2" \
