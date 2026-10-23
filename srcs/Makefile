@@ -23,9 +23,9 @@ logs-wordpress:
 	docker compose logs wordpress
 
 clean:
-	@rm -rf /home/pswirgie/data/mariadb 
-	@rm -rf /home/pswirgie/data/wordpress
 	@docker compose -f docker-compose.yml down -v --remove-orphans
+	@rm -rf /home/pswirgie/data/mariadb
+	@rm -rf /home/pswirgie/data/wordpress
 
 fclean: clean
 	@docker system prune -af --volumes
