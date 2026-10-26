@@ -37,7 +37,7 @@ services:
       - wordpress
     ports:
       - "443:443"
-    restart: on-failure
+    restart: unless-stopped
   wordpress:
     secrets:
       - db_password
@@ -56,7 +56,7 @@ services:
       - .env
     expose:
     - "9000"
-    restart: on-failure
+    restart: unless-stopped
   mariadb:
     secrets:
       - db_password
@@ -72,7 +72,7 @@ services:
       - .env
     expose:
       - "3306"
-    restart: on-failure
+    restart: unless-stopped
 
 networks:
   inception:
